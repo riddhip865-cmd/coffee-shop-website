@@ -17,5 +17,4 @@ Responsive coffeeshop website using html, css nad javascript
 - JavaScript
 
 # Live Website 
-[]
-()
+( https://github.com/riddhip865-cmd/coffee-shop-website )
