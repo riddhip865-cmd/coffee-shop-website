@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Brew & Bliss Coffee Shop</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header>
+    <nav class="navbar">
+
+        <div class="logo">
+            ☕ Brew & Bliss
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#offers">Offers</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li>
+                <button class="cart-btn" onclick="openCart()">
+                    🛒 Cart <span id="cart-count">0</span>
+                </button>
+            </li>
+        </ul>
+
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+
+    </nav>
+</header>
+
+
+<!-- ================= HOME ================= -->
+
+<section id="home" class="hero">
+
+    <div class="hero-content">
+
+        <p class="small-title">WELCOME TO</p>
+
+        <h1>Brew & Bliss</h1>
+
+        <h2>Your Daily Dose of Happiness ☕</h2>
+
+        <p>
+            Freshly brewed coffee, delicious snacks and a cozy place
+            to relax with your loved ones.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="#menu" class="btn">Explore Menu</a>
+            <a href="#contact" class="btn btn-outline">Visit Us</a>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about" class="section">
+
+    <div class="section-title">
+        <p>OUR STORY</p>
+        <h2>About Our Coffee Shop</h2>
+    </div>
+
+    <div class="about-container">
+
+        <div class="about-image">
+            <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=800&q=80"
+                 alt="Coffee Shop">
+        </div>
+
+        <div class="about-text">
+
+            <h2>Made With Love & Fresh Coffee Beans</h2>
+
+            <p>
+                Brew & Bliss is a cozy coffee shop created for people
+                who love great coffee, delicious food and peaceful moments.
+            </p>
+
+            <p>
+                We use freshly roasted coffee beans and quality ingredients
+                to create every cup with care.
+            </p>
+
+            <div class="features">
+
+                <div>
+                    <span>☕</span>
+                    <h3>Fresh Coffee</h3>
+                    <p>Freshly brewed every day.</p>
+                </div>
+
+                <div>
+                    <span>🍰</span>
+                    <h3>Fresh Snacks</h3>
+                    <p>Delicious food and desserts.</p>
+                </div>
+
+                <div>
+                    <span>❤️</span>
+                    <h3>Made With Love</h3>
+                    <p>Served with happiness.</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= MENU ================= -->
+
+<section id="menu" class="section menu-section">
+
+    <div class="section-title">
+        <p>OUR MENU</p>
+        <h2>Choose Your Favorite</h2>
+    </div>
+
+    <!-- Menu Filter -->
+
+    <div class="filter-buttons">
+
+        <button onclick="filterMenu('all')">All</button>
+        <button onclick="filterMenu('coffee')">Coffee</button>
+        <button onclick="filterMenu('cold')">Cold Drinks</button>
+        <button onclick="filterMenu('snacks')">Snacks</button>
+
+    </div>
+
+
+    <div class="menu-grid">
+
+        <!-- Coffee 1 -->
+
+        <div class="menu-card" data-category="coffee">
+
+            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=600&q=80">
+
+            <div class="menu-info">
+
+                <h3>Cappuccino</h3>
+
+                <p>Rich espresso with creamy milk foam.</p>
+
+                <div class="price-row">
+                    <span>₹149</span>
+                    <button onclick="addToCart('Cappuccino',149)">
+                        Add +
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Coffee 2 -->
+
+        <div class="menu-card" data-category="coffee">
+
+            <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=600&q=80">
+
+            <div class="menu-info">
+
+                <h3>Espresso</h3>
+
+                <p>Strong and classic Italian espresso.</p>
+
+                <div class="price-row">
+                    <span>₹99</span>
+                    <button onclick="addToCart('Espresso',99)">
+                        Add +
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Coffee 3 -->
+
+        <div class="menu-card" data-category="coffee">
+
+            <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=600&q=80">
+
+            <div class="menu-info">
+
+                <h3>Cafe Latte</h3>
+
+                <p>Smooth espresso with steamed milk.</p>
+
+                <div class="price-row">
+                    <span>₹139</span>
+                    <button onclick="addToCart('Cafe Latte',139)">
+                        Add +
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Cold Coffee -->
+
+        <div class="menu-card" data-category="cold">
+
+            <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=600&q=80">
+
+            <div class="menu-info">
+
+                <h3>Cold Coffee</h3>
+
+                <p>Chilled creamy coffee with ice.</p>
+
+                <div class="price-row">
+                    <span>₹159</span>
+                    <button onclick="addToCart('Cold Coffee',159)">
+                        Add +
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Iced Latte -->
+
+        <div class="menu-card" data-category="cold">
+
+            <img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=600&q=80">
+
+            <div class="menu-info">
+
+                <h3>Iced Latte</h3>
+
+                <p>Cold espresso with fresh milk and ice.</p>
+
+                <div class="price-row">
+                    <span>₹169</span>
+                    <button onclick="addToCart('Iced Latte',169)">
+                        Add +
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Cake -->
+
+        <div class="menu-card" data-category="snacks">
+
+            <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=600&q=80">
+
+            <div class="menu-info">
+
+                <h3>Chocolate Cake</h3>
+
+                <p>Soft chocolate cake with creamy frosting.</p>
+
+                <div class="price-row">
+                    <span>₹129</span>
+                    <button onclick="addToCart('Chocolate Cake',129)">
+                        Add +
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Sandwich -->
+
+        <div class="menu-card" data-category="snacks">
+
+            <img src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=600&q=80">
+
+            <div class="menu-info">
+
+                <h3>Grilled Sandwich</h3>
+
+                <p>Fresh vegetables with grilled cheese.</p>
+
+                <div class="price-row">
+                    <span>₹149</span>
+                    <button onclick="addToCart('Grilled Sandwich',149)">
+                        Add +
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Brownie -->
+
+        <div class="menu-card" data-category="snacks">
+
+            <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=600&q=80">
+
+            <div class="menu-info">
+
+                <h3>Chocolate Brownie</h3>
+
+                <p>Warm and delicious chocolate brownie.</p>
+
+                <div class="price-row">
+                    <span>₹119</span>
+                    <button onclick="addToCart('Chocolate Brownie',119)">
+                        Add +
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= OFFERS ================= -->
+
+<section id="offers" class="offers section">
+
+    <div class="section-title">
+        <p>SPECIAL DEALS</p>
+        <h2>Today's Special Offers</h2>
+    </div>
+
+    <div class="offer-grid">
+
+        <div class="offer-card">
+
+            <div class="offer-icon">☕</div>
+
+            <h3>Morning Coffee</h3>
+
+            <p>
+                Get any regular coffee with a snack.
+            </p>
+
+            <strong>Only ₹199</strong>
+
+            <button onclick="addToCart('Morning Coffee Combo',199)">
+                Order Now
+            </button>
+
+        </div>
+
+
+        <div class="offer-card">
+
+            <div class="offer-icon">🍰</div>
+
+            <h3>Coffee + Cake</h3>
+
+            <p>
+                Enjoy our favorite coffee with chocolate cake.
+            </p>
+
+            <strong>Only ₹249</strong>
+
+            <button onclick="addToCart('Coffee + Cake Combo',249)">
+                Order Now
+            </button>
+
+        </div>
+
+
+        <div class="offer-card">
+
+            <div class="offer-icon">❤️</div>
+
+            <h3>Friends Combo</h3>
+
+            <p>
+                Two coffees + two snacks for you and your friend.
+            </p>
+
+            <strong>Only ₹399</strong>
+
+            <button onclick="addToCart('Friends Combo',399)">
+                Order Now
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= GALLERY ================= -->
+
+<section id="gallery" class="section">
+
+    <div class="section-title">
+        <p>OUR GALLERY</p>
+        <h2>Moments at Brew & Bliss</h2>
+    </div>
+
+    <div class="gallery">
+
+        <img src="https://images.unsplash.com/photo-1498804103079-a6351b050096?auto=format&fit=crop&w=700&q=80">
+
+        <img src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=700&q=80">
+
+        <img src="https://images.unsplash.com/photo-1453614512568-c4024d13c247?auto=format&fit=crop&w=700&q=80">
+
+        <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=700&q=80">
+
+        <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=700&q=80">
+
+        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=700&q=80">
+
+    </div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section id="contact" class="section contact-section">
+
+    <div class="section-title">
+        <p>GET IN TOUCH</p>
+        <h2>Contact Us</h2>
+    </div>
+
+
+    <div class="contact-container">
+
+        <div class="contact-info">
+
+            <h2>Visit Our Cafe ☕</h2>
+
+            <p>
+                Come and enjoy freshly brewed coffee in a cozy environment.
+            </p>
+
+            <div class="contact-item">
+                <span>📍</span>
+                <div>
+                    <h4>Address</h4>
+                    <p>123 Coffee Street, Vadodara, Gujarat</p>
+                </div>
+            </div>
+
+            <div class="contact-item">
+                <span>📞</span>
+                <div>
+                    <h4>Phone</h4>
+                    <p>+91 98765 43210</p>
+                </div>
+            </div>
+
+            <div class="contact-item">
+                <span>✉️</span>
+                <div>
+                    <h4>Email</h4>
+                    <p>hello@brewandbliss.com</p>
+                </div>
+            </div>
+
+            <div class="contact-item">
+                <span>🕐</span>
+                <div>
+                    <h4>Opening Hours</h4>
+                    <p>Monday - Sunday: 9:00 AM - 10:00 PM</p>
+                </div>
+            </div>
+
+        </div>
+
+
+        <form class="contact-form" onsubmit="submitForm(event)">
+
+            <input type="text" id="name" placeholder="Your Name" required>
+
+            <input type="email" id="email" placeholder="Your Email" required>
+
+            <input type="tel" id="phone" placeholder="Your Phone" required>
+
+            <textarea id="message" rows="5"
+                      placeholder="Your Message" required></textarea>
+
+            <button type="submit" class="btn">
+                Send Message
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-content">
+
+        <div>
+            <h2>☕ Brew & Bliss</h2>
+            <p>
+                Fresh coffee. Good food. Happy moments.
+            </p>
+        </div>
+
+        <div>
+            <h3>Quick Links</h3>
+
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#menu">Menu</a>
+            <a href="#contact">Contact</a>
+
+        </div>
+
+        <div>
+            <h3>Follow Us</h3>
+
+            <p>📷 Instagram</p>
+            <p>📘 Facebook</p>
+            <p>🐦 Twitter</p>
+
+        </div>
+
+    </div>
+
+    <div class="copyright">
+        © 2026 Brew & Bliss Coffee Shop. All Rights Reserved.
+    </div>
+
+</footer>
+
+
+<!-- ================= CART MODAL ================= -->
+
+<div id="cart-modal" class="cart-modal">
+
+    <div class="cart-box">
+
+        <div class="cart-header">
+
+            <h2>🛒 Your Cart</h2>
+
+            <span onclick="closeCart()">×</span>
+
+        </div>
+
+        <div id="cart-items">
+            <p class="empty-cart">Your cart is empty.</p>
+        </div>
+
+        <div class="cart-total">
+
+            <h3>Total: ₹<span id="cart-total">0</span></h3>
+
+            <button onclick="checkout()" class="checkout-btn">
+                Checkout
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
